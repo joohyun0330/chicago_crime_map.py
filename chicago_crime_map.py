@@ -11,7 +11,7 @@ st.title("🗺 시카고 실시간 범죄 지도")
 st.markdown("최근 1년 이내 사건만 표시됩니다. (10분마다 자동 갱신)")
 
 # 10분마다 자동 새로고침
-count = st_autorefresh(interval=600*1000, limit=0, key="refresh")
+count = st_autorefresh(interval=600000, limit=0, key="refresh")
 
 # 범죄 심각도 분류
 SEVERITY_LEVELS = {
@@ -140,4 +140,5 @@ for incident in data:
 st.write(f"지도에 표시된 사건 수: {valid_count}건")
 
 # 지도 표시
+
 st_folium(m, width=900, height=600)
